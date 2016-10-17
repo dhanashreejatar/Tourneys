@@ -56,7 +56,7 @@
 			$_SESSION['SESS_LAST_NAME'] = $member['password'];
 			session_write_close();
 			$_SESSION['DONE']=$doneflag;
-			header("location:wt_home_4.html.php");
+			header("location:formm.html");
 			exit();
 		}
 		else {
@@ -66,7 +66,7 @@
 			if($errflag) {
 				$_SESSION['ERRMSG_ARR'] = $errmsg_arr;
 				session_write_close();
-				header("location: wt_home_4.html.php");
+				header("location:formm.html");
 				exit();
 			}
 		}
