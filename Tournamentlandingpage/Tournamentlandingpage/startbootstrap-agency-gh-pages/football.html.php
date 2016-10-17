@@ -1,3 +1,12 @@
+<?php
+	
+	session_start();
+if(!isset($_SESSION['username'])){
+   header("Location:Login.php");
+}
+
+?>
+
 <script src="vendor/bootstrap/css/bootstrap.min.css">
 
         BootstrapDialog.show({

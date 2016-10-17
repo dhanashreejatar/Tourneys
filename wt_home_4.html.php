@@ -1,12 +1,12 @@
 
-<!--<?php
-  /*Start session
+<?php
+  //Start session
   session_start();  
   //Unset the variables stored in session
   unset($_SESSION['SESS_MEMBER_ID']);
   unset($_SESSION['SESS_FIRST_NAME']);
-  unset($_SESSION['SESS_LAST_NAME']); */
-?>-->
+  unset($_SESSION['SESS_LAST_NAME']); 
+?>
 
 
 <!DOCTYPE html>
@@ -110,7 +110,8 @@
                 =================================-->
                 
 
-     <ul class="nav navbar-nav " >
+		
+     <ul class="nav_navbar-nav " >
                 
                 
                 <li>
@@ -123,23 +124,24 @@
                  <!-- Modal -->
               <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel" id="mymod2" data-backdrop="false">
   <div class="modal-dialog" role="document" style="width:33%">
-  <!--<form name="login" action="login_exec.php" method="post">
-          <?php
-            //if( isset($_SESSION['ERRMSG_ARR']) && is_array($_SESSION['ERRMSG_ARR']) && count($_SESSION['ERRMSG_ARR']) >0 ) {
-            //echo '<ul class="err">';
-            //foreach($_SESSION['ERRMSG_ARR'] as $msg) {
-              //echo '<li>',$msg,'</li>'; 
-              }
-            //echo '</ul>';
-            //unset($_SESSION['ERRMSG_ARR']);
-            }
-            //if( isset($_SESSION['DONE']))
-            {
-              //echo $_SESSION['DONE'];
-              //unset($_SESSION['DONE']);
-            }
-          ?>-->
+  
     <div class="modal-content">
+	<form name="login" action="login_exec.php" method="post">
+          <?php
+            if( isset($_SESSION['ERRMSG_ARR']) && is_array($_SESSION['ERRMSG_ARR']) && count($_SESSION['ERRMSG_ARR']) >0 ) {
+            echo '<ul class="err">';
+            foreach($_SESSION['ERRMSG_ARR'] as $msg) {
+				echo '<li>',$msg,'</li>'; 
+              }
+            echo '</ul>';
+            unset($_SESSION['ERRMSG_ARR']);
+            }
+            if( isset($_SESSION['DONE']))
+            {
+              echo $_SESSION['DONE'];
+              unset($_SESSION['DONE']);
+            }
+          ?>
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <p class="featurette-heading text-center" id="gridSystemModalLabel" style="margin-top:10px; margin-left">Welcome back!</p>
@@ -161,12 +163,12 @@
       </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-warning btn-md" data-dismiss="modal" style="width:100px">Login</button>
+        <input id="button" name="submit" value="Login" type="submit" class="btn btn-warning btn-md"  style="width:100px" />
         
       </div>
+	  </form>
     </div><!-- /.modal-content -->
 
-  
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal --> 
 
@@ -175,7 +177,7 @@
                 
                 <li>
                 <div style="margin:7px">
-                  <button type = "button" class = "btn btn-warning btn-md" style="width:100px">Register</button>
+                  <button onclick="window.location.href='/Tourneys/registerform.html.php'" type = "button" class = "btn btn-warning btn-md" style="width:100px">Register</button>
                   </div>
                 </li> 
                 
@@ -293,6 +295,7 @@
                     </div>
                 </div>
         </div>
+		
 
         <hr class="featurette-divider" style="margin-bottom:0px">
 
@@ -310,7 +313,7 @@
           <br>
           <div class="col-md-3"></div>
           <div class="col-md-6">
-          <button type="button" class="btn btn-warning btn-lg btn-block btn-txt-lg">Register</button>
+          <button onclick="window.location.href='/Touneys/registerform.html.php'" type="button" class="btn btn-warning btn-lg btn-block btn-txt-lg">Register</button>
           </div>
           <div class="col-md-3"></div>
         </div>
