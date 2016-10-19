@@ -41,6 +41,7 @@ body {
 
 .nav_navbar-nav{
 	list-style: none;
+	margin-top:15dp;
 }
 
 /* CUSTOMIZE THE CAROUSEL

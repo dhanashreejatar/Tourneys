@@ -6,7 +6,8 @@
   unset($_SESSION['SESS_MEMBER_ID']);
   unset($_SESSION['SESS_FIRST_NAME']);
   unset($_SESSION['SESS_LAST_NAME']); 
-  unset($_SESSION['username']); 
+  unset($_SESSION['username']);
+  unset($_SESSION['DONE']);  
 ?>
 
 
@@ -69,7 +70,14 @@
 <!-- NAVBAR   TO DO: MAKE FLOAT RIGHT AND SHIFT NAVBAR UP
 ================================================== -->
 <?php
-  include ('header_login.php');
+if(isset($_SESSION['DONE']))
+{
+	include('header_logged_in.php');
+}
+else
+{
+	include('header_login.php');
+}
 ?>           
 
              

@@ -25,9 +25,10 @@
                     <li><a href="#">Football</a></li>
                     <li role="separator" class="divider"></li>
                     <li><a href="#">Basketball</a></li>
-                </li>
+                
                 </ul>
-                 
+                </li>
+</ul>				
             
         
 
@@ -38,7 +39,7 @@
                 <!---Right menu
                 ============================= -->
                 
-                 <ul class="nav navbar-nav nav-right" >
+                 <ul class="nav_navbar-nav">
                  <li class="dropdown notifications-menu nav-right">
               <!-- Menu toggle button -->
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">

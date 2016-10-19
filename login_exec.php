@@ -37,7 +37,7 @@
 	if($errflag) {
 		$_SESSION['ERRMSG_ARR'] = $errmsg_arr;
 		session_write_close();
-		header("location: wt_home_4.html.php");
+		header("location: formm.html.php");
 		exit();
 	}
  
@@ -51,13 +51,14 @@
 			//Login Successful
 			session_regenerate_id();
 			$member = mysqli_fetch_assoc($result);
+			echo "HI";
 			$_SESSION['SESS_MEMBER_ID'] = 'Yo';
 			$_SESSION['SESS_FIRST_NAME'] = $member['username'];
 			$_SESSION['SESS_LAST_NAME'] = $member['password'];
 			$_SESSION['DONE']=$doneflag;
 			$_SESSION['username']=$member['username'];
 			session_write_close();
-			header("location:formm.html.php");
+			header("location:wt_home_4.html.php");
 			exit();
 		}
 		else {
@@ -67,7 +68,7 @@
 			if($errflag) {
 				$_SESSION['ERRMSG_ARR'] = $errmsg_arr;
 				session_write_close();
-				header("location:wt_home_4.html.php");
+				header("location:formm.html.php");
 				exit();
 			}
 		}
