@@ -51,12 +51,13 @@
 			//Login Successful
 			session_regenerate_id();
 			$member = mysqli_fetch_assoc($result);
-			$_SESSION['SESS_MEMBER_ID'] = $member['id'];
+			$_SESSION['SESS_MEMBER_ID'] = 'Yo';
 			$_SESSION['SESS_FIRST_NAME'] = $member['username'];
 			$_SESSION['SESS_LAST_NAME'] = $member['password'];
-			session_write_close();
 			$_SESSION['DONE']=$doneflag;
-			header("location:/Tourneys/Tournamentlandingpage/Tournamentlandingpage/startbootstrap-agency-gh-pages/football.html.php");
+			$_SESSION['username']=$member['username'];
+			session_write_close();
+			header("location:formm.html.php");
 			exit();
 		}
 		else {
