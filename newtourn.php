@@ -1,6 +1,6 @@
 <?php
+	session_start();
 
-echo "Reached";
  // This function will run within each post array including multi-dimensional arrays 
 function ExtendedAddslash(&$params)
 { 
@@ -15,7 +15,8 @@ function ExtendedAddslash(&$params)
 
     $name = $_POST['tourn_name'];
     $venue = $_POST['tourn_venue'];
-    $dates = $_POST['tourn_date_1'];//." - ".$_POST['tourn_dates_2'];
+    $locality = $_POST['tourn_locality'];
+    $dates = $_POST['tourn_date_1'];
     //$sport= (that if condidtion)
     //$reg_yes_no =   ~~For radio button~~
     $reg_fee = $_POST['tourn_fee'];
@@ -23,15 +24,16 @@ function ExtendedAddslash(&$params)
     $maxteams = $_POST['tourn_not'];
     $maxplayers = $_POST['tourn_nop'];
 
-    $db_host = 'localhost';
-	$db_username = 'root';
-	$db_password = '';
-	$db_name = 'tourneys';
-	$connect=mysqli_connect( $db_host, $db_username, $db_password) or die(mysqli_error($connect));
-	mysqli_select_db($connect,$db_name); 
+    require "connection.php";
 
 	mysqli_query($connect,"INSERT INTO tournaments(tourn_name,tourn_venue,tourn_dates,tourn_fee,tourn_deadline,tourn_not,tourn_nop)
 					VALUES('$name','$venue','$dates',$reg_fee,'$deadline',$maxteams,$maxplayers)")
 	or die(mysqli_error($connect));
 
+
+
 ?>	
+
+<form action="participate_but.php" >
+	<input type="submit" > Participate </input>
+	</form> 
