@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
 <link href="prof.css" rel="stylesheet">
@@ -12,13 +13,16 @@
 
                 </div>
                 <div class="avatar">
-                    <img alt="" src="http://api.khabarfeed.com/api/Images/2015/09/siasat.pk_.jpg">
+                    <img alt="" src="http://3.bp.blogspot.com/-G5ViranuRyI/U7ksmcAswMI/AAAAAAAAEFQ/sfr9gEnFIVU/s1600/ts3_seasons_render_soccer_player.png">
                 </div>
                 <div class="info">
                     <div class="title">
-                        <h1>Fawad Khan<3</h1>
+                        <?php 
+						session_start();
+						echo '<h1>'.$_SESSION['SESS_FIRST_NAME'].'</h1>';
+						?>
                     </div>
-                    <div class="desc"><h3>152/6 FairyTopia,<br>Dreamland,<br>Mumbai</h3></div>
+                    <div class="desc"><h3><?php echo $_SESSION['SESS_LOCATION'];?></h3></div>
                 </div>
                 <div class="bottom">
                     <a class="btn btn-primary btn-twitter btn-sm" href="https://twitter.com/webmaniac">

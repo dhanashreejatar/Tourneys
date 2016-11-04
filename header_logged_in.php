@@ -81,7 +81,7 @@
                   <p>
                     WELCOME!
                     <?php
-						echo($_SESSION['username']);
+						echo($_SESSION['SESS_FIRST_NAME']);
 					
 					?>
                   </p>
@@ -109,7 +109,7 @@
                 <!-- Menu Footer-->
                 <li class="user-footer">
                   <div class="pull-left">
-                    <a href="#" class="btn btn-default btn-flat">Profile</a>
+                    <a href="prof.html.php" class="btn btn-default btn-flat">Profile</a>
                   </div>
                   <div class="pull-right">
                     <a href="wt_home_4.html.php" class="btn btn-default btn-flat" onclick="return theFunction();">Sign out</a>

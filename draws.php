@@ -48,11 +48,13 @@
 				{
 					if($stack[$hi1]!="null"&&$stack[3-$hi1]!="null")
 					{
-						echo $win;
-						echo ' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ';
-						echo $stack[$hi1];
-						echo " vs ";
-						echo $stack[3-$hi1];
+						echo '<tr>';
+						echo '<td>'.$win.'</td>';
+						//echo ' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ';
+						echo '<td>'.$stack[$hi1].'</td>';
+						//echo " vs ";
+						echo '<td>'.$stack[3-$hi1].'</td>';
+						echo '</tr>';
 						echo ' <br> ';
 						$stack[$hi1]=$win;
 						$stack[3-$hi1]=$win;
@@ -91,24 +93,32 @@
 					array_push($stack,"null");
 				}
 				$win="A";
+				$time=12.00;
 				for($hi1=0;$hi1<4;$hi1++)
 				{
 					if($stack[$hi1]!="null"&&$stack[7-$hi1]!="null")
 					{
-						echo $win;
-						echo ' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ';
-						echo $stack[$hi1];
-						echo " vs ";
-						echo $stack[7-$hi1];
+						echo '<tr>';
+						echo '<td>Day1</td>';
+						echo '<td>'.$time.'</td>';
+						echo '<td>'.$win.'</td>';
+						//echo ' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ';
+						echo '<td>'.$stack[$hi1].'</td>';
+						//echo " vs ";
+						echo '<td>'.$stack[7-$hi1].'</td>';
+						echo '</tr>';
 						echo ' <br> ';
 						$stack[$hi1]=$win;
 						$stack[7-$hi1]=$win;
 						$win++;
+						$time++;
+						$time++;
 					}
 					else{
 						$stack[7-$hi1]=$stack[$hi1];
 					}						
 				}
+				$time=12.00;
 				for($hi1=0;$hi1<2;$hi1++)
 				{
 					if(strlen($stack[$hi1])!=1)
@@ -129,12 +139,18 @@
 					}
 					$stack[3-$hi1]=$win;
 					$stack[$hi1]=$win;
-					echo $win;
-						echo ' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ';
-						echo $team1;
-						echo " vs ";
-						echo $team2;
+					echo '<tr>';
+						echo '<td>Day2</td>';
+						echo '<td>'.$time.'</td>';
+						echo '<td>'.$win.'</td>';
+						//echo ' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ';
+						echo '<td>'.$team1.'</td>';
+						//echo " vs ";
+						echo '<td>'.$team2.'</td>';
+						echo '</tr>';
 						echo ' <br> ';
+						$time++;
+						$time++;
 					$win++;
 				}
 				if(strlen($stack[0])!=1)
@@ -153,11 +169,16 @@
 					{
 						$team2="Winner of ".$stack[1];
 					}
-					echo $win;
-					echo ' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ';
-					echo $team1;
-					echo " vs ";
-					echo $team2;
+					echo '<tr>';
+						echo '<td>Day3</td>';
+						echo '<td>12</td>';
+						echo '<td>'.$win.'</td>';
+						//echo ' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ';
+						echo '<td>'.$team1.'</td>';
+						//echo " vs ";
+						echo '<td>'.$team2.'</td>';
+						echo '</tr>';
+						echo ' <br> ';
 				
 			}
 			else if($no<=16)

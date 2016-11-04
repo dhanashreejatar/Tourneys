@@ -200,9 +200,9 @@
 }
 
 .card.hovercard .cardheader {
-    background: url("http://i1.tribune.com.pk/wp-content/uploads/2016/02/1044750-FAWAD-1455170009-405-640x480.jpg");
+    background: url("http://im.hunt.in/cg/Guna/City-Guide/spo.jpg");
     background-size: cover;
-    height: 275px;
+    height: 350px;
 }
 
 .card.hovercard .avatar {
@@ -212,10 +212,10 @@
 }
 
 .card.hovercard .avatar img {
-    width: 150px;
-    height: 150px;
-    max-width: 150px;
-    max-height: 150px;
+    width: 200px;
+    height: 200px;
+    max-width: 200px;
+    max-height: 200px;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;
