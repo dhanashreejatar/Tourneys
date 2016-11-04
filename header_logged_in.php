@@ -40,7 +40,7 @@
                 ============================= -->
                 
                  <ul class="nav_navbar-nav">
-                 <li class="dropdown notifications-menu nav-right">
+                 <li class="dropdown_notifications-menu_nav-right">
               <!-- Menu toggle button -->
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <i class="fa fa-bell-o"></i>
@@ -77,6 +77,15 @@
                 <li class="user-header">
                   <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
+				  
+                  <p>
+                    WELCOME!
+                    <?php
+						echo($_SESSION['username']);
+					
+					?>
+                  </p>
+
                   <p>
                     Shooters
                     <small>Member since Nov. 2012</small>
@@ -103,7 +112,16 @@
                     <a href="#" class="btn btn-default btn-flat">Profile</a>
                   </div>
                   <div class="pull-right">
-                    <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                    <a href="wt_home_4.html.php" class="btn btn-default btn-flat" onclick="return theFunction();">Sign out</a>
+					<script type="text/javascript">
+						function theFunction () {
+							// return true or false, depending on whether you want to allow the `href` property to follow through or not
+							<?php
+								unset($_SESSION['DONE']);
+							?>
+							return true;
+						}
+					</script>
                   </div>
                 </li>
               </ul>
@@ -115,3 +133,6 @@
 
       </div>
     </div>
+	<br>
+	<br>
+	<br>

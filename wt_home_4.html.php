@@ -7,7 +7,6 @@
   unset($_SESSION['SESS_FIRST_NAME']);
   unset($_SESSION['SESS_LAST_NAME']); 
   unset($_SESSION['username']);
-  unset($_SESSION['DONE']);  
 ?>
 
 
