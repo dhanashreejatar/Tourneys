@@ -1,57 +1,18 @@
 
 <?php
-  //Start session
+//  Start session
   session_start();  
   //Unset the variables stored in session
   unset($_SESSION['SESS_MEMBER_ID']);
+  unset($_SESSION['SESS_FIRST_NAME']);
   unset($_SESSION['SESS_LAST_NAME']); 
-  unset($_SESSION['username']);
-
 ?>
 
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="favicon.ico">
-
-  
-    <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-
-    <title>Tourneys</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="bootstrap.min.css" rel="stylesheet">
-
-    <!-- Theme style -->
-  <link rel="stylesheet" href="AdminLTE.min.css">
-  
-  <!-- AdminLTE Skins. Choose a skin from the css/skins
-       folder instead of downloading all of them to reduce the load. -->
-  <link rel="stylesheet" href="_all-skins.min.css">
-
-
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="ie10-viewport-bug-workaround.css" rel="stylesheet">
-
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="ie-emulation-modes-warning.js"></script>
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+  <?php include("header_content.php") ?>
 
     <!-- Custom styles for this template -->
     <link href="carousel.css" rel="stylesheet">
@@ -59,25 +20,46 @@
 
 
 
-
-
-
-
-
   <body>
 
 <!-- NAVBAR   TO DO: MAKE FLOAT RIGHT AND SHIFT NAVBAR UP
 ================================================== -->
-<?php
-if(isset($_SESSION['DONE']))
-{
-	include('header_logged_in.php');
-}
-else
-{
-	include('header_login.php');
-}
-?>           
+  
+    
+    <div class="navbar-wrapper" >
+      <div class="container">
+
+        <nav class="navbar navbar-inverse navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#" style="">Tourneys</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sports <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Cricket</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Football</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Basketball</a></li>
+          
+                   
+                  </ul>
+                </li>
+                </ul>
+              
+        
 
              
                 
@@ -86,8 +68,89 @@ else
                 =================================-->
                 
 
-		
-     
+     <ul class="nav navbar-nav " style="float:right; padding-right:30px; margin-right:10px;">
+                
+                
+                <li>
+                  <div style="margin:7px">
+                  <button type = "button" class = "btn btn-warning btn-md" style="width:100px" data-toggle="modal" data-target="#mymod2" >Login</button>
+                  </div>
+                </li> 
+                
+               
+                 <!-- Modal -->
+              <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel" id="mymod2" data-backdrop="false">
+  <div class="modal-dialog" role="document" style="width:33%">
+  <form name="login" action="login_exec.php" method="post">
+          <?php
+            if( isset($_SESSION['ERRMSG_ARR']) && is_array($_SESSION['ERRMSG_ARR']) && count($_SESSION['ERRMSG_ARR']) >0 ) {
+            echo '<ul class="err">';
+            foreach($_SESSION['ERRMSG_ARR'] as $msg) {
+              echo '<li>',$msg,'</li>'; 
+              }
+            echo '</ul>';
+            unset($_SESSION['ERRMSG_ARR']);
+            }
+            if( isset($_SESSION['DONE']))
+            {
+              echo $_SESSION['DONE'];
+              unset($_SESSION['DONE']);
+            }
+          ?>
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <p class="featurette-heading text-center" id="gridSystemModalLabel" style="margin-top:10px; margin-left">Welcome back!</p>
+      </div>
+      <div class="modal-body">
+      <div class="row">
+      <div class="col-sm-2"></div>
+      <div class="col-sm-8">
+       <input type="text" class="form-control" name="username" placeholder="User Name" required="" autofocus="" style="margin-top:10px; margin-bottom:10px" />
+       </div>
+       <div class="col-sm-2"></div>
+       </div>
+       <div class="row">
+       <div class="col-sm-2"></div>
+       <div class="col-sm-8">
+      <input type="password" class="form-control" name="password" placeholder="Password" required="" style="margin-bottom:10px; margin-top:5px" />      
+        </div>
+        <div class="col-sm-2"></div>
+      </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning btn-md" data-dismiss="modal" style="width:100px">Login</button>
+        
+      </div>
+    </div><!-- /.modal-content -->
+
+  
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal --> 
+
+
+
+                
+                <li>
+                <div style="margin:7px">
+                  <button type = "button" class = "btn btn-warning btn-md" style="width:100px">Register</button>
+                  </div>
+                </li> 
+                
+
+              </ul>
+           
+           
+          </div>
+
+        </nav>
+
+      </div>
+    </div>
+    
+    <br>
+    <br>
+    <br>
     
 
 
@@ -121,11 +184,11 @@ else
         </div>
       </div>
       <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left fa-chevron-left" aria-hidden="true"></span>
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
       </a>
       <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right fa-chevron-right" aria-hidden="true"></span>
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
       </a>
     </div><!-- /.carousel -->
@@ -188,7 +251,6 @@ else
                     </div>
                 </div>
         </div>
-		
 
         <hr class="featurette-divider" style="margin-bottom:0px">
 
@@ -206,7 +268,7 @@ else
           <br>
           <div class="col-md-3"></div>
           <div class="col-md-6">
-          <button onclick="window.location.href='/Tourneys/registerform.html.php'" type="button" class="btn btn-warning btn-lg btn-block btn-txt-lg">Register</button>
+          <button type="button" class="btn btn-warning btn-lg btn-block btn-txt-lg">Register</button>
           </div>
           <div class="col-md-3"></div>
         </div>
@@ -220,7 +282,7 @@ else
       <!-- FOOTER -->
       <footer>
         <p class="pull-right"><a href="#">Back to top</a></p>
-        
+        <p>&copy; 2016 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
       </footer>
 
     </div><!-- /.container -->

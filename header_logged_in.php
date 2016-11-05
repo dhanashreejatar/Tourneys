@@ -10,25 +10,36 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#">Tourneys</a>
+              <a class="navbar-brand" href="wt_home_4.html.php">Tourneys</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
+                <li class="active"><a href="wt_home_4.html.php">Home</a></li>
                 <li><a href="#about">About</a></li>
                 
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sports <span class="caret"></span></a>
                   <ul class="dropdown-menu">
-                    <li><a href="#">Cricket</a></li>
+                    <li><a href="cards_cric.php">Cricket</a></li>
                     <li role="separator" class="divider"></li>
-                    <li><a href="#">Football</a></li>
+                    <li><a href="cards_foot.php">Football</a></li>
                     <li role="separator" class="divider"></li>
-                    <li><a href="#">Basketball</a></li>
+                    <li><a href="cards_bball.php">Basketball</a></li>
                 
                 </ul>
                 </li>
 </ul>				
+<!--
+<a href="wt_home_4.html.php" class="btn btn-default btn-flat" onclick="return theFunction();">Sign out</a>
+          <script type="text/javascript">
+            function theFunction () {
+              // return true or false, depending on whether you want to allow the `href` property to follow through or not
+              <?php
+              //  unset($_SESSION['DONE']);
+              ?>
+              return true;
+            }
+          </script>-->
             
         
 
@@ -38,58 +49,27 @@
 
                 <!---Right menu
                 ============================= -->
-                
-                 <ul class="nav_navbar-nav">
-                 <li class="dropdown_notifications-menu_nav-right">
-              <!-- Menu toggle button -->
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <i class="fa fa-bell-o"></i>
-                <span class="label label-warning">10</span>
-              </a>
-              <ul class="dropdown-menu dropdown-menu-right">
-                <li class="header">You have 10 notifications</li>
-                <li>
-                  <!-- Inner Menu: contains the notifications -->
-                  <ul class="menu">
-                    <li><!-- start notification -->
-                      <a href="#">
-                        <i class="fa fa-users text-aqua"></i> 5 new members joined today
-                      </a>
-                    </li>
-                    <!-- end notification -->
-                  </ul>
-                </li>
-                <li class="footer"><a href="#">View all</a></li>
-              </ul>
-            </li>
+                <div class="navbar-custom-menu">
+                 <ul class="navbar-nav pull-right" style="list-style:none; margin-top:15px;padding-right:20px">
 
-            <!-- User Account Menu -->
-            <li class="dropdown user user-menu nav-right" >
+                  <!-- User Account Menu -->
+            <li class="dropdown user user-menu" >
               <!-- Menu Toggle Button -->
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <!-- The user image in the navbar-->
-                <img src="../../dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                <img src="userimg-sm.jpg" class="user-image" alt="User Image">
                 <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                <span class="hidden-xs">Shooters</span>
+                <span class="hidden-xs" style="font-size:16px"> <?php echo($_SESSION['SESS_FIRST_NAME']);?></span>
               </a>
-              <ul class="dropdown-menu dropdown-menu-right" >
+              <ul class="dropdown-menu" style="margin-top:15px">
                 <!-- The user image in the menu -->
-                <li class="user-header">
-                  <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <li class="user-header" >
+                  <img src="userimg.jpg" class="img-circle" alt="User Image">
 
-				  
-                  <p>
-                    WELCOME!
-                    <?php
-						echo($_SESSION['SESS_FIRST_NAME']);
-					
-					?>
-                  </p>
 
-                  <p>
-                    Shooters
-                    <small>Member since Nov. 2012</small>
-                  </p>
+                  <p style="color:black;font-size:24px">
+                    Welcome 
+                  <?php echo($_SESSION['SESS_FIRST_NAME']);?>!</p>
                 </li>
                 <!-- Menu Body -->
                 <li class="user-body">
@@ -98,6 +78,7 @@
                      <!-- <a href="#">Followers</a>-->
                     </div>
                     <div class="col-xs-8 text-center">
+
                       <button type="button" class="btn btn-block btn-warning btn-flat" onclick="hey();"><h5>Create Tourney<h></button>
 					  <script>
 					  function hey()
@@ -105,6 +86,7 @@
 						  window.open("formm.php");
 					  }
 					  </script>
+
                     </div>
                     <div class="col-xs-2 text-center">
                       <!--<a href="#">Friends</a>-->
@@ -119,17 +101,19 @@
                   </div>
                   <div class="pull-right">
                     <a href="wt_home_4.html.php" class="btn btn-default btn-flat" onclick="return theFunction();">Sign out</a>
-					<script type="text/javascript">
-						function theFunction () {
-							// return true or false, depending on whether you want to allow the `href` property to follow through or not
-							<?php
-								unset($_SESSION['DONE']);
-							?>
-							return true;
-						}
-					</script>
+          <script type="text/javascript">
+            function theFunction () {
+              // return true or false, depending on whether you want to allow the `href` property to follow through or not
+              <?php
+                unset($_SESSION['DONE']);
+              ?>
+              return true;
+            }
+          </script>
                   </div>
                 </li>
+
+            
               </ul>
             
             <!---End of right header -->

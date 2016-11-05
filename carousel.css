@@ -34,7 +34,7 @@ body {
   width: auto;
 } .nav-left{float:left} .nav-right{float:right;} 
 
-.nav_navbar-nav li{
+/*.nav_navbar-nav li{
 	width: auto;
 	float: right;
 }

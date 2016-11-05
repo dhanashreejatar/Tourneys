@@ -3,8 +3,6 @@
 
 <head>
  <?php
- session_start();
-
 include('header_content.php');
 ?>
    <link href="carousel.css" rel="stylesheet">
@@ -12,7 +10,7 @@ include('header_content.php');
 
 <body>
 <?php
-if(isset($_SESSION['SESS_FIRST_NAME']))
+if(isset($_SESSION['DONE']))
 {
   include('header_logged_in.php');
 }
@@ -28,12 +26,12 @@ else
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h1 class="section-heading" style="font-size:64px">Football</h1>
+                    <h1 class="section-heading" style="font-size:64px">Basketball</h1>
                     <h3 class="section-subheading text-muted">Upcoming Tourneys.</h3>
                 </div>
             </div>
 
-            <?php include ('eventsgridf.php') ?>
+            <?php include ('eventsgridb.php'); ?>
            
                            </div>
                            </a>
@@ -74,7 +72,17 @@ else
     }) </script>
 
 
-   
+    <script>
+       /* $(document).ready(function(){
+            $(function(){
+                <?php
+                   
+                    ?>
+                    alert("Loading...");
+            });
+        })*/
+    </script>
+
 
 </body>
 </html>

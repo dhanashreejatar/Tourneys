@@ -55,11 +55,13 @@
 			echo "HI";
 			$_SESSION['SESS_MEMBER_ID'] = 'Yo';
 			$_SESSION['SESS_FIRST_NAME'] = $username;
+
 			$_SESSION['SESS_LAST_NAME'] = $member['mem_password'];
 			$_SESSION['DONE']=$doneflag;
 			$_SESSION['username']=$member['mem_user_name'];
 			$_SESSION['SESS_LOCATION']=$member['mem_location'];
 			
+
 			session_write_close();
 			header("location:wt_home_4.html.php");
 			exit();

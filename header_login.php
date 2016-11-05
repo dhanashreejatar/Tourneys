@@ -10,27 +10,27 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#" style="">Tourneys</a>
+              <a class="navbar-brand" href="wt_home_4.html.php" style="">Tourneys</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
+                <li class="active"><a href="wt_home_4.html.php">Home</a></li>
                 <li><a href="#about">About</a></li>
                 
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sports <span class="caret"></span></a>
                   <ul class="dropdown-menu">
-                    <li><a href="#">Cricket</a></li>
+                    <li><a href="cards_cric.php">Cricket</a></li>
                     <li role="separator" class="divider"></li>
-                    <li><a href="#">Football</a></li>
+                    <li><a href="cards_foot.php">Football</a></li>
                     <li role="separator" class="divider"></li>
-                    <li><a href="#">Basketball</a></li>
+                    <li><a href="cards_bball.php">Basketball</a></li>
           
                    
                   </ul>
                 </li>
                 </ul>
-				<ul class="nav_navbar-nav " >
+				<ul class="nav navbar-nav pull-right " style="list-style:none;" >
                 
                 
                 <li>
