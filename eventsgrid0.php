@@ -2,7 +2,7 @@
 	
 	require "connection.php";
 	
-	$sess=$_SESSION['SESS_FIRST_NAME'];
+	$sess=$_SESSION['SESS_REQUIRED_NAME'];
 	$result1 = mysqli_query($bd, "SELECT * 
 						FROM tournament_organized
 						WHERE mem_username='$sess'") or die(mysqli_error($bd));
@@ -31,11 +31,7 @@
         echo  
         '<div class="col-md-4 col-sm-6 portfolio-item" id="card_.'.$id.' " style = "margin-top:35px; margin-bottom:25px;" >
                     <a href="#mymod2" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
+                        
                         <img src="ftb.jpg" class="img-responsive" alt="">
 
                     </a>

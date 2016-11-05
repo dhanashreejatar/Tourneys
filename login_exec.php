@@ -61,7 +61,7 @@
 			$_SESSION['username']=$member['mem_user_name'];
 			$_SESSION['SESS_LOCATION']=$member['mem_location'];
 			
-
+			$_SESSION['SESS_REQUIRED_NAME']=$member['mem_user_name'];
 			session_write_close();
 			header("location:wt_home_4.html.php");
 			exit();
