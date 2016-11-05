@@ -69,7 +69,7 @@
 <!-- NAVBAR   TO DO: MAKE FLOAT RIGHT AND SHIFT NAVBAR UP
 ================================================== -->
 <?php
-if(isset($_SESSION['DONE']))
+if(isset($_SESSION['SESS_FIRST_NAME']))
 {
 	include('header_logged_in.php');
 }

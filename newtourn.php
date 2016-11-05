@@ -15,7 +15,7 @@ function ExtendedAddslash(&$params)
 
     $name = $_POST['tourn_name'];
     $venue = $_POST['tourn_venue'];
-	//$sport = $_POST['tourn_sport'];
+	$sport = (int)$_POST['tournsport'];
     $locality = $_POST['tourn_locality'];
     $dates = $_POST['tourn_date_1'];
     //$sport= (that if condidtion)
@@ -27,17 +27,18 @@ function ExtendedAddslash(&$params)
 
     require "connection.php";
 
-	mysqli_query($bd,"INSERT INTO tournaments(tourn_name,tourn_venue,tourn_dates,tourn_deadline,tourn_not,tourn_nop)
-					VALUES('$name','$venue','$dates','$deadline',$maxteams,$maxplayers)")
+	mysqli_query($bd,"INSERT INTO tournaments(tourn_name,tourn_sport,tourn_venue,tourn_locality,tourn_dates,tourn_deadline,tourn_not,tourn_nop)
+					VALUES('$name',$sport,'$venue','$locality','$dates','$deadline',$maxteams,$maxplayers)")
 	or die(mysqli_error($bd));
 	$id=mysqli_insert_id($bd);
 	$sess=$_SESSION['SESS_FIRST_NAME'];
-	mysqli_query($bd,"INSERT INTO tournament_organized(tourn_id,mem_username)
+	$result = mysqli_query($bd,"INSERT INTO tournament_organized(tourn_id,mem_username)
 					VALUES($id,'$sess')")
 	or die(mysqli_error($bd));
-
+    if($result) {        
+        header("location:wt_home_4.html.php");
+        exit();
+        }
 ?>	
 
-<form action="participate_but.php" >
-	<input type="submit" > Participate </input>
-	</form> 
+

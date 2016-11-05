@@ -1,0 +1,88 @@
+<?php
+session_start();
+?>
+<!DOCTYPE HTML> 
+<script type="text/javascript">
+    
+    function CheckLength() {
+    	var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+            //var address = document.getElementById[email].value;
+            if (reg.test(mem_email.value) == false) 
+            {
+                alert('Invalid Email Address');
+                return (false);
+            }
+    if (document.getElementById("mem_user_name").value.length <1) {
+        alert("Username Should Be More Than 1 Character");
+        return false;
+    } 
+    
+    
+
+    else document.getElementById("form3").submit();
+}
+
+</script>
+
+<html>
+<head>
+<?php include('header_content.php'); ?>
+<link rel="stylesheet" href="regform.css">
+</head>
+<body>
+
+	 `<h1>SIGN-UP ON TOURNEYS.COM!</h1>
+   
+	    	
+			<div class="contentform">
+			<!--	<div id="sendmessage"> Your message has been sent successfully. Thank you. </div> -->
+
+			<form  method="post" id="form3" onsubmit="return CheckLength()" action="newmem.php">   
+					<div class="leftcontact">
+							<div class="form-group">
+								<p>Username:<span>*</span></p>
+								<span class="icon-case"><i class="fa fa-user"></i></span>
+								<input type="text" name="mem_user_name" id="mem_user_name"/>
+								<div class="validation"></div>
+							</div>
+
+							<div class="form-group">
+							<p>Password :<span>*</span></p>	
+							<span class="icon-case"><i class="fa fa-envelope-o"></i></span>
+								<input type="password" name="mem_password" id="mem_password"/>
+								
+							</div>
+
+							<div class="form-group">
+							<p>Email Address :<span>*</span></p>	
+							<span class="icon-case"><i class="fa fa-envelope-o"></i></span>
+								<input type="text" name="mem_email" id="mem_email"/>
+								
+							</div>
+
+							<div class="form-group">
+							<p>Captain-Name:<span></span></p>	
+							<span class="icon-case"><i class="fa fa-envelope-o"></i></span>
+								<input type="text" name="mem_capname" id="mem_capname"/>
+								
+							</div>
+
+							<div class="form-group">
+							<p>Phone:<span>*</span></p>	
+							<span class="icon-case"><i class="fa fa-envelope-o"></i></span>
+								<input type="text" name="mem_phone" id="mem_phone"/>
+								
+							</div>
+							<div class="form-group">
+							<p>Location:<span></span></p>	
+							<span class="icon-case"><i class="fa fa-envelope-o"></i></span>
+								<input type="text" name="mem_location" id="mem_location"/>
+								
+							</div>
+
+
+					</div>
+					<button type="submit" class="bouton-contact" >Send</button>
+			</form>
+</body>
+</html>

@@ -11,7 +11,7 @@
 	    <h1>Should you have any questions, please do not hesitate to contact us :</h1>
 	    
     <div class="contentform">
-    	<div id="sendmessage"> Your message has been sent successfully. Thank you. </div>
+    	
 
 
     	<div class="leftcontact">
@@ -27,10 +27,10 @@
 			<div class="form-group">
 			<p>Sport: <span>*</span></p>
 			<div class="row">
-			<select name="tourn_sport" form="new_tourn" id="input7">
-			  <option value="football">Football</option>
-			  <option value="cricket">Cricket</option>
-			  <option value="basketball">Basketball</option>
+			<select name="tournsport">
+			  <option value=1>Football</option>
+			  <option value=2>Cricket</option>
+			  <option value=3>Basketball</option>
 			</select>
 			</div>
 			</div>
