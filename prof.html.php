@@ -59,17 +59,17 @@
 					</span>
 					<table class="table1">
 					  <tr>
-						<th>Tournaments played</th>
-					  
-					  
-						<th>Tournaments Won</th>
+											  
+						<th><form action="cards_part.php">
+							<input type="submit" class="btn" value="Tournaments Played" style="height:70px; background-color:#FFA500"/>
+						</form></th>
+						
 					 
-						<th>Tournaments Orgainzed</th>
+						<th><form action="cards_org.php">
+							<input type="submit" class="btn btn-warning btn-md" value="Tournaments Organized" style="height:70px; background-color:#FFA500"/>
+						</form></th>
 					  </tr>
 					  <tr>
-					  <td>1</td>
-					  <td>2</td>
-					  <td>3</td>
 					  
 					</table>
 					

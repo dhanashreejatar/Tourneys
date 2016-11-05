@@ -98,7 +98,13 @@
                      <!-- <a href="#">Followers</a>-->
                     </div>
                     <div class="col-xs-8 text-center">
-                      <button type="button" class="btn btn-block btn-warning btn-flat"><h5>Create Tourney<h></button>
+                      <button type="button" class="btn btn-block btn-warning btn-flat" onclick="hey();"><h5>Create Tourney<h></button>
+					  <script>
+					  function hey()
+					  {
+						  window.open("formm.php");
+					  }
+					  </script>
                     </div>
                     <div class="col-xs-2 text-center">
                       <!--<a href="#">Friends</a>-->

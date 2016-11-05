@@ -4,6 +4,18 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+#input7{
+	width: 100px;
+}
+
+select {
+    border:0;
+    background:transparent;
+    height:32px;
+    border:1px solid #d8d8d8;
+    width:350px;
+    -webkit-appearance: none;
+}
 
 form h1 {
   font-size: 18px;

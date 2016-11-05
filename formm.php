@@ -23,21 +23,15 @@
                 <div class="validation"></div>
 			</div>
 
+			
 			<div class="form-group">
 			<p>Sport: <span>*</span></p>
 			<div class="row">
-			<div class="col-md-4" style="margin-right:150px">
-			<input type="radio" name="sport" id="football" value="football"  />
-			<label for="football">Football</label>
-			</div>
-			<div class="col-md-4" style="margin-right:150px">
-			<input type="radio" name="sport" id="cricket" value="cricket" />
-			<label for="cricket">Cricket</label>
-			</div>
-			<div class="col-md-4" style="margin-right:150px">	
-			<input type="radio" name="sport" id="basketball" value="basketball" />
-			<label for="basketball">Basketball</label>
-			</div>
+			<select name="tourn_sport" form="new_tourn" id="input7">
+			  <option value="football">Football</option>
+			  <option value="cricket">Cricket</option>
+			  <option value="basketball">Basketball</option>
+			</select>
 			</div>
 			</div>
 
@@ -63,26 +57,7 @@
             
 			</div>
 
-			
-
-			<div class="form-group">
-			<p>Registration Fee :<span>*</span></p>
-			<label for="yes">
-				<input type="radio"  name="reg" id="yes" data-rule="required"/>
-				YES
-			</label>	
-			<label for="no">
-				<input type="radio"  name="reg" id="no" data-rule="required"/>
-            	NO   
-            </label>
-			</div>
-
-			<div class="form-group">
-			<p>Registration Fee:</p>
-			<span class="icon-case"><i class="fa fa-map-marker"></i></span>
-				<input type="text" name="tourn_fee" id="tourn_fee" data-rule="required"/>
-                <div class="validation"></div>
-			</div>	
+		
 
 			<div class="form-group">
 			<p>Deadline :<span>*</span></p>
