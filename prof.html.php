@@ -3,25 +3,28 @@
 <head>
 <link href="prof.css" rel="stylesheet">
 </head>
-<body>
+<body class="hey">
 <div class="container">
 	<div class="row">
 		<div class="col-lg-3 col-sm-6">
 
             <div class="card hovercard">
                 <div class="cardheader">
-
+		
                 </div>
-                <div class="avatar">
-                    <img alt="" src="http://3.bp.blogspot.com/-G5ViranuRyI/U7ksmcAswMI/AAAAAAAAEFQ/sfr9gEnFIVU/s1600/ts3_seasons_render_soccer_player.png">
-                </div>
+                
 				<?php 
 						session_start();
-						//$_SESSION['SESS_REQUIRED_NAME']='chant';
+						if(isset($_GET['data']))
+						{
+							$_SESSION['SESS_REQUIRED_NAME']=$_GET['data'];
+						}
+						else
+						{
+							$_SESSION['SESS_REQUIRED_NAME']=$_SESSION['SESS_FIRST_NAME'];
+						}
 						include 'getdetails.php';
 						?>
-                
-
 			
         </div>
 		

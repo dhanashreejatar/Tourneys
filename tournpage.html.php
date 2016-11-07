@@ -1,6 +1,13 @@
 <?php 
 session_start();
-$_SESSION['current_tourn_id']=2;
+if(isset($_GET['data']))
+{
+	$_SESSION['current_tourn_id']=$_GET['data'];
+}
+else
+{
+	$_SESSION['current_tourn_id']=1;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

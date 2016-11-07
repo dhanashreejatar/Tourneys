@@ -11,7 +11,7 @@ function ExtendedAddslash(&$params)
 }
 
      // Initialize ExtendedAddslash() function for every $_POST variable
-    ExtendedAddslash($_POST);  
+    //ExtendedAddslash($_POST);  
 
     $name = $_POST['tourn_name'];
     $venue = $_POST['tourn_venue'];
@@ -24,11 +24,12 @@ function ExtendedAddslash(&$params)
     $deadline = $_POST['tourn_deadline'];
     $maxteams = $_POST['tourn_not'];
     $maxplayers = $_POST['tourn_nop'];
+	$imgData =addslashes (file_get_contents($_FILES['userfile']['tmp_name']));
 
     require "connection.php";
 
-	mysqli_query($bd,"INSERT INTO tournaments(tourn_name,tourn_sport,tourn_venue,tourn_locality,tourn_dates,tourn_deadline,tourn_not,tourn_nop)
-					VALUES('$name',$sport,'$venue','$locality','$dates','$deadline',$maxteams,$maxplayers)")
+	mysqli_query($bd,"INSERT INTO tournaments(tourn_name,tourn_sport,tourn_venue,tourn_locality,tourn_dates,tourn_deadline,tourn_not,tourn_nop,imagee)
+					VALUES('$name',$sport,'$venue','$locality','$dates','$deadline',$maxteams,$maxplayers,'{$imgData}')")
 	or die(mysqli_error($bd));
 	$id=mysqli_insert_id($bd);
 	$sess=$_SESSION['SESS_FIRST_NAME'];
@@ -36,8 +37,8 @@ function ExtendedAddslash(&$params)
 					VALUES($id,'$sess')")
 	or die(mysqli_error($bd));
     if($result) {        
-        header("location:wt_home_4.html.php");
-        exit();
+        echo '<script>window.close();</script>';
+        
         }
 ?>	
 

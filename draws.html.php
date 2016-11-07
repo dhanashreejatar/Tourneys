@@ -52,13 +52,15 @@
       <tr>
         <th>Date</th>
         <th>Time</th>
+        <th>Match</th>
         <th>Team-1</th>
         <th>Team-2</th>
-        <th>Status</th>
       </tr>
     </thead>
   <tbody>
   <?php 
+	session_start();
+	$_SESSION['draws']=$_GET['data'];
 	include('draws.php');
   ?>
   </tbody>

@@ -25,7 +25,7 @@ $name=$password=" ";
    
      $mem_location= test_input($_POST["mem_location"]);
    
-   
+	$imgData =addslashes (file_get_contents($_FILES['userfile']['tmp_name']));
   
     function test_input($data) {
        $data = trim($data);
@@ -43,8 +43,8 @@ $name=$password=" ";
     }
     else{
     
-    $result=mysqli_query($bd,"INSERT INTO member(mem_user_name,mem_password,mem_capname,mem_email,mem_phone,mem_location) 
-    VALUES('$name','$mem_password','$mem_capname','$mem_email',$mem_phone,'$mem_location')")  or die(mysqli_error($bd));
+    $result=mysqli_query($bd,"INSERT INTO member(mem_user_name,mem_password,mem_capname,mem_email,mem_phone,mem_location,mem_image) 
+    VALUES('$name','$mem_password','$mem_capname','$mem_email',$mem_phone,'$mem_location','{$imgData}')")  or die(mysqli_error($bd));
         if($result) {        
         header("location:wt_home_4.html.php");
         exit();

@@ -1,21 +1,20 @@
 
 
 
-<script>
+<!--<script>
 	$(document).ready(function() {
 	$("a").click(function(){
 		$name = (this).id;
 		alert ($name);
-		$.post("getdetails.php", {
+		$.post("prof.html.php", {
 			'name':$name
 		}).done(function(data){
 			alert("Posted data: " +data); 
-			
 		});
 	});
 	});
 
-</script>
+</script>-->
 
 
 
@@ -59,15 +58,6 @@
 						FROM tournament_organized
 						WHERE tourn_id =$sess") or die(mysqli_error($bd));
 	
-	
-	/*$result = mysqli_query($bd, "SELECT * 
-						FROM tournaments
-						WHERE tourn_s);*/
-	//$count = mysqli_num_rows($result);
-
-	/*for($i=0;$i<$count;$i++){
-		$tourn_id
-	}*/
 
 	if (mysqli_num_rows($result) > 0) {
     // output data of each row
@@ -75,9 +65,8 @@
 	$mem_name = $row1["mem_username"];
         echo '<div class="footer-col col-md-4">
                         <h3>Organiser</h3>
-                        <p><a href="prof.html.php" onclick="before('.$mem_name.')">'.$mem_name.'</a></p>
-                    </div><div class="footer-col col-md-4">
-                        <h3>TEAMS PARTICIPATING</h3><ul style="list-style:none">';
+                        <p><a href="prof.html.php?data='.$mem_name.'" >'.$mem_name.'</a></p>
+                    </div>';
 	}
 	}
 	$result2= mysqli_query($bd, "SELECT *
@@ -86,10 +75,12 @@
 
 	if (mysqli_num_rows($result2) > 0) {
     // output data of each row
+	echo '<div class="footer-col col-md-4">
+                        <h3>TEAMS PARTICIPATING</h3><ul style="list-style:none">';
     while($row2 = mysqli_fetch_assoc($result2)) {
 		$mem_name = $row2["team_name"];
                      echo '
-                        <li><a href="prof.html.php"  id="'.$mem_name.'" class="clickable">'.$mem_name.'</a></li>';
+                        <li><a href="prof.html.php?data='.$mem_name.'"  id="'.$mem_name.'">'.$mem_name.'</a></li>';
 	}
 	}
 					echo '</ul></div><div class="footer-col col-md-4">

@@ -15,7 +15,7 @@
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 <li class="active"><a href="wt_home_4.html.php">Home</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="abt.html">About</a></li>
                 
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sports <span class="caret"></span></a>
@@ -96,7 +96,7 @@
                 
                 <li>
                 <div style="margin:7px">
-                  <button onclick="window.location.href='/Tourneys/registerform.html.php'" type = "button" class = "btn btn-warning btn-md" style="width:100px">Register</button>
+                  <button onclick="window.location.href='/Tourneys/registerform.php'" type = "button" class = "btn btn-warning btn-md" style="width:100px">Register</button>
                   </div>
                 </li> 
                 

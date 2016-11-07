@@ -27,8 +27,7 @@ else
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h1 class="section-heading" style="font-size:64px">Football</h1>
-                    <h3 class="section-subheading text-muted">Upcoming Tourneys.</h3>
+                    <h1 class="section-heading" style="font-size:64px">Tourneys Organized</h1>
                 </div>
             </div>
 

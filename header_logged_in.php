@@ -15,7 +15,7 @@
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 <li class="active"><a href="wt_home_4.html.php">Home</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="abt.html">About</a></li>
                 
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sports <span class="caret"></span></a>
@@ -71,13 +71,20 @@
                     Welcome 
                   <?php echo($_SESSION['SESS_FIRST_NAME']);?>!</p>
                 </li>
+
                 <!-- Menu Body -->
+				<form action="prof.html.php" style="margin: 0 auto; width:150px;">
+					<input type="text" name="data" placeholder="Find Tourney Friends" style="text-align:center;margin-bottom:15px;">
+					</form>
                 <li class="user-body">
                   <div class="row">
+				  
                     <div class="col-xs-2 text-center">
                      <!-- <a href="#">Followers</a>-->
                     </div>
+					
                     <div class="col-xs-8 text-center">
+					
 
                       <button type="button" class="btn btn-block btn-warning btn-flat" onclick="hey();"><h5>Create Tourney<h></button>
 					  <script>
@@ -100,16 +107,8 @@
                     <a href="prof.html.php" class="btn btn-default btn-flat">Profile</a>
                   </div>
                   <div class="pull-right">
-                    <a href="wt_home_4.html.php" class="btn btn-default btn-flat" onclick="return theFunction();">Sign out</a>
-          <script type="text/javascript">
-            function theFunction () {
-              // return true or false, depending on whether you want to allow the `href` property to follow through or not
-              <?php
-                unset($_SESSION['DONE']);
-              ?>
-              return true;
-            }
-          </script>
+                    <a href="logout.php" class="btn btn-default btn-flat">Sign out</a>
+
                   </div>
                 </li>
 

@@ -3,9 +3,8 @@
   //Start session
   session_start();  
   //Unset the variables stored in session
-  unset($_SESSION['SESS_MEMBER_ID']);
-  unset($_SESSION['SESS_LAST_NAME']); 
-  unset($_SESSION['username']);
+  
+					
 
 ?>
 
@@ -64,7 +63,7 @@
 
 
 
-  <body>
+  <body style="background:#d8d8d8">
 
 <!-- NAVBAR   TO DO: MAKE FLOAT RIGHT AND SHIFT NAVBAR UP
 ================================================== -->
@@ -157,7 +156,7 @@ else
 
        <div class="row">
                 <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                    <a href="cards_foot.php" class="portfolio-link">
                         
                         <img src="ftb.jpg" class="img-responsive" alt="">
                     </a>
@@ -168,7 +167,7 @@ else
 
                 </div>
                 <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
+                    <a href="cards_cric.php" class="portfolio-link">
                         
                         <img src="cricket.jpg" class="img-responsive" alt="">
                     </a>
@@ -178,7 +177,7 @@ else
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
+                    <a href="cards_bball.php" class="portfolio-link">
                         
                         <img src="bball.jpg" class="img-responsive" alt="">
                     </a>
@@ -206,7 +205,7 @@ else
           <br>
           <div class="col-md-3"></div>
           <div class="col-md-6">
-          <button onclick="window.location.href='/Tourneys/registerform.html.php'" type="button" class="btn btn-warning btn-lg btn-block btn-txt-lg">Register</button>
+          <button onclick="window.location.href='/Tourneys/registerform.php'" type="button" class="btn btn-warning btn-lg btn-block btn-txt-lg">Register</button>
           </div>
           <div class="col-md-3"></div>
         </div>

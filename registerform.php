@@ -29,7 +29,7 @@ session_start();
 <?php include('header_content.php'); ?>
 <link rel="stylesheet" href="regform.css">
 </head>
-<body>
+<body style="background:url('rr.jpg')">
 
 	 `<h1>SIGN-UP ON TOURNEYS.COM!</h1>
    
@@ -37,7 +37,7 @@ session_start();
 			<div class="contentform">
 			<!--	<div id="sendmessage"> Your message has been sent successfully. Thank you. </div> -->
 
-			<form  method="post" id="form3" onsubmit="return CheckLength()" action="newmem.php">   
+			<form  method="post" id="form3" onsubmit="return CheckLength()" action="newmem.php" enctype="multipart/form-data">   
 					<div class="leftcontact">
 							<div class="form-group">
 								<p>Username:<span>*</span></p>
@@ -79,7 +79,11 @@ session_start();
 								<input type="text" name="mem_location" id="mem_location"/>
 								
 							</div>
-
+							
+							<div class="form-group">
+							<p>Upload Profile Picture:</p>
+							<input required name="userfile" type="file">
+							</div>
 
 					</div>
 					<button type="submit" class="bouton-contact" >Send</button>

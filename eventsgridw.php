@@ -4,8 +4,8 @@
 	
 	$sess=$_SESSION['SESS_REQUIRED_NAME'];
 	$result1 = mysqli_query($bd, "SELECT * 
-						FROM tournament_organized
-						WHERE mem_username='$sess'") or die(mysqli_error($bd));
+						FROM tournament_win
+						WHERE team_name='$sess'") or die(mysqli_error($bd));
 	
 	while($row = mysqli_fetch_assoc($result1)){
 	$row1=$row['tourn_id'];
@@ -30,13 +30,11 @@
 
         echo  
         '<div class="col-md-4 col-sm-6 portfolio-item" id="card_.'.$id.' " style = "margin-top:35px; margin-bottom:25px;" >
-                    <a href="#mymod2" class="portfolio-link" data-toggle="modal">
-                        
-                        ';
+                    <a href="#mymod2" class="portfolio-link" data-toggle="modal">';
                         
 						if($row['imagee']!=NULL)
 						{
-                        echo '<img class="img-responsive" alt="" src="data:image/jpeg;base64,'.base64_encode( $row['imagee'] ).'" style="width:350px;height:250px"/>';
+                        echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['imagee'] ).'" style="width:350px;height:250px"/>';
 						}
 						else if($row["tourn_sport"]==1){
 							echo '<img src="ftb.jpg" class="img-responsive" alt="" style="width:350px;height:250px">';
@@ -48,9 +46,7 @@
 							echo '<img src="bball.jpg" class="img-responsive" alt="" style="width:350px;height:250px">';
 						}
 
-                    echo '
-
-                    </a>
+                    echo '</a>
                     <div class="portfolio-caption">
                         
                         <h3 style="text-align:center; padding-bottom:10px;">'.$row["tourn_name"].'</h3>
@@ -58,31 +54,15 @@
                         <form action="tournpage.html.php">
 						<input type="hidden" name="data" value='.$id.'>
                         <button type="submit" class="btn btn-warning btn-md" style="float:left;margin-left:20px">View More</button>
-                        </form>';
-		if($_SESSION['SESS_REQUIRED_NAME']==$_SESSION['SESS_FIRST_NAME'])
-		{
-		echo			'<form action="winner.php">
-						<input type="hidden" name="data" value='.$id.'>
-                        <button type="submit" class="btn btn-warning btn-md" style="float:left;margin-left:20px">Results</button>
-						</form>';
-		
-		echo			'<form name="participate" action="draws.html.php">
-                         <input type="hidden" name="data" value='.$id.' > </input>
-                        <button type="submit" id="'.$id.' " class="btn btn-warning btn-md part-btn" style="float:right;margin-right:20px">Generate Draws</button>
-                       
-                        </form>                        
-                    </div>
-		</div>';}
-		else
-		{
-			'<form name="participate" action="draws.html.php">
+                        </form>
+						
+						<form name="participate" action="draws.html.php">
                          <input type="hidden" name="data" value='.$id.' > </input>
                         <button type="submit" id="'.$id.' " class="btn btn-warning btn-md part-btn" style="float:right;margin-right:20px">View Draws</button>
                        
                         </form>                        
                     </div>
-		</div>';
-		}
+                </div>';
 
 
     }

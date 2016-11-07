@@ -10,7 +10,8 @@ include('header_content.php');
 
 <body>
 <?php
-if(isset($_SESSION['DONE']))
+session_start();
+if(isset($_SESSION['SESS_FIRST_NAME']))
 {
   include('header_logged_in.php');
 }

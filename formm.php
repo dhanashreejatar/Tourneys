@@ -1,13 +1,13 @@
 <html>
 <head>
 
-<link rel="stylesheet" href="form.css">
+<link rel="stylesheet" href="formm.css">
 
 </head>
-<body>
+<body style="background:url('rr.jpg')">
 	  <h1>CREATE A NEW TOURNAMENT</h1>
    
-  <form name='new_tourn' action="newtourn.php" method="POST">
+  <form name='new_tourn' action="newtourn.php" method="POST" enctype="multipart/form-data">
 	    <h1>Should you have any questions, please do not hesitate to contact us :</h1>
 	    
     <div class="contentform">
@@ -79,6 +79,11 @@
 				<input type="text" name="tourn_nop" id="tourn_nop" data-rule="required"/>
                 <div class="validation"></div>
 			</div>	
+			
+			<div class="form-group">
+			<p>Upload image of your Tourney:</p>
+			
+			<input required name="userfile" type="file">
 
 	</div>
 
