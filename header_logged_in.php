@@ -57,15 +57,15 @@
               <!-- Menu Toggle Button -->
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <!-- The user image in the navbar-->
-                <img src="userimg-sm.jpg" class="user-image" alt="User Image">
+				<?php echo '<img class="user-image" alt="User Image" src="data:image/jpeg;base64,'.base64_encode( $_SESSION['SESS_IMG'] ).'"/>';?>
                 <!-- hidden-xs hides the username on small devices so only the image appears. -->
                 <span class="hidden-xs" style="font-size:16px"> <?php echo($_SESSION['SESS_FIRST_NAME']);?></span>
               </a>
               <ul class="dropdown-menu" style="margin-top:15px">
                 <!-- The user image in the menu -->
                 <li class="user-header" >
-                  <img src="userimg.jpg" class="img-circle" alt="User Image">
-
+				<?php echo '<img class="img-circle" alt="User Image" src="data:image/jpeg;base64,'.base64_encode( $_SESSION['SESS_IMG'] ).'"/>';?>
+                 
 
                   <p style="color:black;font-size:24px">
                     Welcome 

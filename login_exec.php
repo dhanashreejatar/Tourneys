@@ -58,6 +58,7 @@
 			$_SESSION['SESS_FIRST'] = $username;
 			$_SESSION['SESS_LAST_NAME'] = $member['mem_password'];
 			$_SESSION['DONE']='Hey';
+			$_SESSION['SESS_IMG']= $member['mem_image'];
 			$_SESSION['username']=$member['mem_user_name'];
 			$_SESSION['SESS_LOCATION']=$member['mem_location'];			
 			$_SESSION['SESS_REQUIRED_NAME']=$member['mem_user_name'];
