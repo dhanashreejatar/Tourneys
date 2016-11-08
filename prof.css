@@ -1,11 +1,6 @@
 .hey{
     background-color:#fbbe9e;
 }
-.container{
-	margin:200px;
-	width:70%;
-	margin-top:50px;
-}
 
 
 .card {
@@ -214,8 +209,7 @@
 }
 
 .btn-group-lg{
-    height: 50px;
-    padding: 10px 16px;
+    color: white;
     font-size: 18px;
     line-height: 1.3333333;
     border-radius: 6px;
@@ -258,7 +252,7 @@
     margin-bottom: 17px;
 }
 
-.btn{ border-radius: 50%; width:32px; height:32px; line-height:18px;  }
+
 
 .rating {
   direction: rtl;

@@ -63,7 +63,7 @@
 
 
 
-  <body style="background:#d8d8d8">
+  <body > <!--style="background:#d8d8d8"-->
 
 <!-- NAVBAR   TO DO: MAKE FLOAT RIGHT AND SHIFT NAVBAR UP
 ================================================== -->
@@ -101,7 +101,9 @@ else
       </ol>
       <div class="carousel-inner" role="listbox">
         <div class="item active">
+          
           <img class="first-slide" src="banner1.jpg" alt="First slide">
+          
           <div class="container">
             
           </div>

@@ -43,7 +43,7 @@
                         WHERE tourn_id='$id'");
     
         echo  
-        '<div class="col-md-4 col-sm-6 portfolio-item" id="card_.'.$id.' " style = "margin-top:35px; margin-bottom:25px;" >';
+        '<div class="col-md-4 col-sm-6 portfolio-item" id="card_'.$id.' " style = "margin-top:20px;margin-bottom:20px; height:500px" >';
                     
                         if($row['imagee']!=NULL)
 						{
@@ -55,15 +55,25 @@
                         
 
                     
-                   echo '<div class="portfolio-caption">
+                   echo '<div class="portfolio-caption style=" padding-bottom:15px;">
                         
-                        <h3 style="text-align:center; padding-bottom:10px;">'.$row["tourn_name"].'</h3>
-                        <h4><span style="float:left;margin-left:20px;padding-bottom:25px;">Deadline: '.$row["tourn_deadline"].'</span> <span style="float:right;margin-right:20px;padding-bottom:25px;">Locality: '.$row["tourn_locality"].'</span></h4>
-                        <hr style="visible:"false""></hr>
+                        <div class="row">
+                        <h3 style="text-align:center;padding-bottom:1%">'.$row["tourn_name"].'</h3>
+                        </div>
+                        
+                        <div class="row">
+                        <h4><span class="pull-left" style="margin-left:8%;">Deadline: '.$row["tourn_deadline"].'</span> <span class="pull-right" style="margin-right:8%;">Locality: '.$row["tourn_locality"].'</span></h4>
+                        </div>
+                        <hr style="border-color: #717171; border-style: solid;"></hr>
+                        <div class="row">
+                        <h4><span class = "pull-left" style="margin-left:8%;">Max teams: '.$row["tourn_nop"].'</span> <span class="pull-right" style="margin-right:8%;">Max players: '.$row["tourn_not"].'</span></h4>
+                        </div>
+                        <hr style="border-color: #717171; border-style: solid;"></hr>
+            <div class="row">           
 						<form action="tournpage.html.php">
-						<hr></hr>
+						
 						<input type="hidden" name="data" value='.$id.'>
-                        <button type="submit" class="btn btn-warning btn-md" style="float:left;margin-left:20px">View More</button>
+                        <button type="submit" class="btn btn-warning btn-md pull-left" style="margin-left:8%"">View More</button>
                       	</form>';
 			if(isset($_SESSION['SESS_FIRST_NAME']))
 		{
@@ -80,7 +90,7 @@
 						
 						echo '<form>
                          <input type="hidden" name="tpart_id" id="tpart_id" value='.$id.' > </input>
-                        <button type="submit" id="'.$id.' " class="btn btn-warning btn-md part-btn" style="float:right;margin-right:20px" onclick ="beforeSubmit('.$id.');">Participate</button>
+                        <button type="submit" id="'.$id.' " class="btn btn-warning btn-md part-btn pull-right" style="margin-right:8%"" onclick ="beforeSubmit('.$id.');">Participate</button>
                        </form>';
                                               
                     
@@ -92,7 +102,7 @@
 				{
 						echo '<form>
                          <input type="hidden" name="tpart_id" id="tpart_id" value='.$id.' > </input>
-                        <button type="submit" id="'.$id.' " class="btn btn-warning btn-md part-btn" style="float:right;margin-right:20px" disabled>Ended</button>
+                        <button type="submit" id="'.$id.' " class="btn btn-warning btn-md part-btn pull-right" style="margin-right:8%" disabled>Ended</button>
                        </form>';
 				}
 				
@@ -100,19 +110,20 @@
 				{
 						echo '<form>
                          <input type="hidden" name="tpart_id" id="tpart_id" value='.$id.' > </input>
-                        <button type="submit" id="'.$id.' " class="btn btn-warning btn-md part-btn" style="float:right;margin-right:20px" disabled>Participated</button>
+                        <button type="submit" id="'.$id.' " class="btn btn-warning btn-md part-btn pull-right" style="margin-right:8%" disabled>Participated</button>
                        </form>';
 				}
 				else if($row["tourn_not"]==mysqli_num_rows($result4))
 				{
 						echo '<form>
                          <input type="hidden" name="tpart_id" id="tpart_id" value='.$id.' > </input>
-                        <button type="submit" id="'.$id.' " class="btn btn-warning btn-md part-btn" style="float:right;margin-right:20px" disabled>Tourney Full</button>
+                        <button type="submit" id="'.$id.' " class="btn btn-warning btn-md part-btn pull-right" style="margin-right:8%" disabled>Tourney Full</button>
                        </form>';
 				}
 		}
 			echo'
-                                              
+                    </div>
+
                     </div>
                     
 

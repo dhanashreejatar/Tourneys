@@ -1,10 +1,27 @@
+<?php
+session_start();
+?>
 <html>
 <head>
-
+<?php include('header_content.php'); ?>
 <link rel="stylesheet" href="formm.css">
+<link href="carousel.css" rel="stylesheet">
+
+
 
 </head>
 <body style="background:url('rr.jpg')">
+
+<?php
+if(isset($_SESSION['SESS_FIRST_NAME']))
+{
+	include('header_logged_in.php');
+}
+else
+{
+	include('header_login.php');
+}
+?> 
 	  <h1>CREATE A NEW TOURNAMENT</h1>
    
   <form name='new_tourn' action="newtourn.php" method="POST" enctype="multipart/form-data">
@@ -85,7 +102,7 @@
 			
 			<input required name="userfile" type="file">
 
-	</div>
+	<div class="leftcontact">
 
 	
 <button type="submit" class="bouton-contact">Send</button>

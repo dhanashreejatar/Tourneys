@@ -21,12 +21,10 @@ else
     <meta name="author" content="">
 
     <title></title>
-	 <!-- jQuery -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-	
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<?php include('header_content.php'); ?>
+
+   
 
     <!-- Plugin JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
@@ -44,6 +42,7 @@ else
 
     <!-- Theme CSS -->
     <link href="css/freelancer.min.css" rel="stylesheet">
+    <link href="carousel.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -60,6 +59,16 @@ else
 </head>
 
 <body id="page-top" class="index">
+<?php
+if(isset($_SESSION['SESS_FIRST_NAME']))
+{
+    include('header_logged_in.php');
+}
+else
+{
+    include('header_login.php');
+}
+?>    
 
 <div class="img">
 <img src="cbf.png" width="100%" height="400px">

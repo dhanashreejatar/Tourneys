@@ -8,6 +8,13 @@
 include('header_content.php');
 ?>
    <link href="carousel.css" rel="stylesheet">
+
+ <style>
+ hr {
+    border-color: #ffffff;
+  border-style: solid;
+ }
+ </style>  
 </head>
 
 <body>
@@ -35,7 +42,7 @@ else
 
             <?php include ('eventsgridf.php') ?>
            
-                           </div>
+                           
                            </a>
         </div>
     </section>

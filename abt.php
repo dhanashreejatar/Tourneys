@@ -14,10 +14,7 @@
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-
     <!-- Theme CSS -->
-    <link rel="stylesheet" href="AdminLTE.min.css">
-  
     <link href="css/freelancer.min.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
@@ -35,7 +32,20 @@
 </head>
 
 <body id="page-top" class="index">
-<section class="success" id="about">
+
+<?php
+if(isset($_SESSION['SESS_FIRST_NAME']))
+{
+    include('header_logged_in.php');
+}
+else
+{
+    include('header_login.php');
+}
+?>  
+
+
+<section class="success" id="about" ">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -45,17 +55,14 @@
             </div>
             <div class="row">
                 <div class="col-lg-4 col-lg-offset-2">
-                    <p>Tourneys is a free Tournament Scheduler and Viewer. <br>The tournament scheduling, creating, updating and draw generation presents an easy and convenient forum for sports enthusiasts. </p>
+                    <p>Tourneys is a free tournament scheduler and viewer. The tournament scheduling,creating,updating and draw generation presents an easy and convenient forum for sports-enthusiasts. </p>
                 </div>
                 <div class="col-lg-4">
-                    <p>Whether you're a student looking to play sports you are a passionate about, a professional looking to bust your stress, or a professional wanting to display your talent, this forum is the perfect place to be.</p>
+                    <p>Whether you're a student looking to play sports you are a passionate about, a professional looking to bust your stress, or a proffessional wanting to display your talent, this forum is the perfect place to be.</p>
                 </div>
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <a href="registerform.php" class="btn btn-lg btn-outline" style="margin:5px">
-                        Register
-                    </a>
-                    <a href="wt_home_4.html.php" class="btn btn-lg btn-outline" style="margin:5px">
-                        Home
+                    <a href="registerform.php" class="btn btn-lg btn-outline">
+                        <i class="fa fa-download"></i>Get Started
                     </a>
                 </div>
             </div>

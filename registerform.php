@@ -28,10 +28,22 @@ session_start();
 <head>
 <?php include('header_content.php'); ?>
 <link rel="stylesheet" href="regform.css">
+ <link href="carousel.css" rel="stylesheet">
 </head>
-<body style="background:url('rr.jpg')">
+<body style="background:url('rr.jpg')"> <!--style="background:url('rr.jpg')"-->
 
-	 `<h1>SIGN-UP ON TOURNEYS.COM!</h1>
+<?php
+if(isset($_SESSION['SESS_FIRST_NAME']))
+{
+	include('header_logged_in.php');
+}
+else
+{
+	include('header_login.php');
+}
+?>      
+
+	 `<h1 class="featurette-heading" style="margin-top:30px">Sign Up Today!</h1>
    
 	    	
 			<div class="contentform">

@@ -48,19 +48,22 @@
 
                     echo '</a>
                     <div class="portfolio-caption">
-                        
+                        <div class="row">
                         <h3 style="text-align:center; padding-bottom:10px;">'.$row["tourn_name"].'</h3>
-
+                        </div>
+                        <hr style="border-color: #717171; border-style: solid;"></hr>
+                        <div class="row">
                         <form action="tournpage.html.php">
 						<input type="hidden" name="data" value='.$id.'>
-                        <button type="submit" class="btn btn-warning btn-md" style="float:left;margin-left:20px">View More</button>
+                        <button type="submit" class="btn btn-warning btn-md" style="float:left;margin-left:8%">View More</button>
                         </form>
 						
 						<form name="participate" action="draws.html.php">
                          <input type="hidden" name="data" value='.$id.' > </input>
-                        <button type="submit" id="'.$id.' " class="btn btn-warning btn-md part-btn" style="float:right;margin-right:20px">View Draws</button>
+                        <button type="submit" id="'.$id.' " class="btn btn-warning btn-md part-btn" style="float:right;margin-right:8%">View Draws</button>
                        
-                        </form>                        
+                        </form>     
+                        </div>                   
                     </div>
                 </div>';
 

@@ -29,22 +29,25 @@
 					</div>
 					-->
 					
-					<table class="table1">
-					  <tr>
+					<table class="table1" style="margin-left:5%">
+
+					<div class="text-center">	
+					  <tr >
 											  
 						<th><form action="cards_part.php">
-							<input type="submit" value="Tournaments Played" class = "btn-group-lg" style="height:70px; background-color:#FFA500"/>
+							<input type="submit" value="Tournaments Played" class = "btn btn-group-lg" style="height:70px; background-color:#FFA500"/>
 						</form></th>
+
 						
 						<th><form action="cards_won.php">
-							<input type="submit" value="Tournaments Won" class = "btn-group-lg" style="height:70px; background-color:#FFA500"/>
+							<input type="submit" value="Tournaments Won" class = "btn btn-group-lg" style="height:70px; background-color:#FFA500"/>
 						</form></th>
 					 
 						<th><form action="cards_org.php">
-							<input type="submit" value="Tournaments Organized" class = "btn-group-lg" style="height:70px; background-color:#FFA500"/>
+							<input type="submit" value="Tournaments Organized" class = "btn btn-group-lg" style="height:70px; background-color:#FFA500"/>
 						</form></th>
 					  </tr>
-					  <tr>
+					  </div>
 					  
 	</table>'; }
 	}
